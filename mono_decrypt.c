@@ -2,8 +2,8 @@
 #include<ctype.h>
 #include<string.h>
 
-int linearSearch(char arr[], char c){
-    int pos;
+int linearSearch(char arr[], char c){// itssg 123 $%
+    int pos=0;
     for (int i = 0; i < strlen(arr); i++){
         if(arr[i]!=c){
             pos++;
@@ -24,7 +24,7 @@ int main(){
     scanf("%[^\n]", key);
 
     for (int i = 0; i < strlen(c_text); i++){
-        if (isalpha(c_text[i])){
+            if (isalpha(c_text[i])){
                 if (c_text[i]>='A' && c_text[i]<='Z'){
                     int pos = linearSearch(key, c_text[i]);
                     p_text[i] = pos + 'A';
@@ -33,8 +33,12 @@ int main(){
                     int pos = linearSearch(key, c_text[i]);
                     p_text[i] = pos + 'a';
                 }    
-            }   
-        }
+            }else{
+                p_text[i] = c_text[i];
+            }
+    }
+    p_text[strlen(c_text)] = '\0';
+        
     printf("Decrypted Text is: %s", p_text);
     return 0;   
 }
